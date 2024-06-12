@@ -116,4 +116,10 @@ public class EmployeeServiceImpl implements EmployeeService {
                 .build();
     employeeMapper.update(employee);;
     }
+
+    public Employee getById(Long id) {
+        Employee employee = employeeMapper.getById(id);
+        employee.setPassword(null);
+        return employee;
+    }
 }
